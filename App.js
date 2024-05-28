@@ -1,19 +1,8 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
-import {getFontFamily} from './assets/fonts/helper';
+import {SafeAreaView} from 'react-native';
 
 const App = () => {
-  return (
-    <SafeAreaView>
-      <Text
-        style={{
-          fontSize: 70,
-          fontFamily: getFontFamily('Inter', '100'),
-        }}>
-        Hello World!
-      </Text>
-    </SafeAreaView>
-  );
+  return <SafeAreaView />;
 };
 
 export default App;
