@@ -2,7 +2,6 @@ import React from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
 import Header from '../../components/Header/Header';
 import globalStyle from '../../assets/styles/globalStyle';
-import style from './style';
 
 const Home = () => {
   return (
