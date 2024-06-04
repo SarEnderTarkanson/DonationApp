@@ -19,12 +19,15 @@ import {updateSelectedCategoryId} from '../../redux/reducers/Categories';
 const Home = () => {
   const categories = useSelector(state => state.categories);
   const user = useSelector(state => state.user);
+  const donations = useSelector(state => state.donations);
   const dispatch = useDispatch();
 
   const [categoryPage, setCategoryPage] = useState(1);
   const [categoryList, setCategoryList] = useState([]);
   const [isLoadingCategories, setIsLoadingCategories] = useState(false);
   const categoryPageSize = 4;
+
+  console.log('this is our current donations state', donations);
 
   useEffect(() => {
     setIsLoadingCategories(true);
