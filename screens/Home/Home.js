@@ -16,8 +16,10 @@ import Search from '../../components/Search/Search';
 import Tab from '../../components/Tab/Tab';
 import {updateSelectedCategoryId} from '../../redux/reducers/Categories';
 import SingleDonationItem from '../../components/SingleDonationItem/SingleDonationItem';
+import {updateSelectedDonationId} from '../../redux/reducers/Donations';
+import {Routes} from '../../navigation/Routes';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const categories = useSelector(state => state.categories);
   const user = useSelector(state => state.user);
   const donations = useSelector(state => state.donations);
@@ -125,7 +127,10 @@ const Home = () => {
             {donationItems.map(value => (
               <View key={value.donationItemId} style={style.singleDonationItem}>
                 <SingleDonationItem
-                  onPress={selectedDonationId => {}}
+                  onPress={selectedDonationId => {
+                    dispatch(updateSelectedDonationId(selectedDonationId));
+                    navigation.navigate(Routes.SingleDonationItem);
+                  }}
                   donationItemId={value.donationItemId}
                   uri={value.image}
                   donationTitle={value.name}
