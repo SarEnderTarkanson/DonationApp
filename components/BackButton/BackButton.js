@@ -13,7 +13,7 @@ const BackButton = props => {
     </Pressable>
   );
 };
-BackButton.PropTypes = {
+BackButton.propTypes = {
   onPress: PropTypes.func.isRequired,
 };
 
